@@ -1,0 +1,8 @@
+.navbar-expand-toggle{
+    background-color: var(--primary-color) !important;
+    border: none;
+}
+
+.btn-close {
+    background-color:var(--primary-color) !important; 
+  }

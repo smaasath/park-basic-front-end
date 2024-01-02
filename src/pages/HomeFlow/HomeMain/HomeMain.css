@@ -1,0 +1,35 @@
+.home-body {
+    background: url('../../../assests/pictures/homeimage.png') !important;
+    height: 100vh;  
+    background-position: center; 
+}
+
+.home-heading-container{
+    width: 100%;
+    color: white;
+    height: 100%;
+    
+}
+
+.home-heading{
+    font-size: 70px;
+    font-weight: 700;
+}
+
+.home-description{
+    font-size: 25px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.684);
+}
+
+
+
+@media only screen and (max-width: 730px) {
+    .home-heading{
+        font-size: 40px; 
+    }
+    .home-description{
+        font-size: 12px;
+       
+    }
+  }
