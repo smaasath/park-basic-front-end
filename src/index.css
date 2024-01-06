@@ -15,4 +15,6 @@ code {
 :root {
   --primary-button-color: linear-gradient(90deg, #FB8800 0%, #FD2517 100%);
   --primary-color:#FB8800;
+  --secondary-color : #191919;
+  --secondary-color-home : #191919E5;
 }

@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import HomeMain from './pages/HomeFlow/HomeMain/HomeMain';
+import SignIn from './pages/authorization/SignIn/SignIn';
+
 
 
 function App() {
@@ -10,12 +12,16 @@ function App() {
     <div>
       <Routes>
         <Route
-          path='/' 
+          path='/'
           element={<HomeMain />}
         />
+        <Route
+          path='/signin'
+          element={<SignIn />}
+        />
       </Routes>
-      
-      
+
+
     </div>
   );
 }

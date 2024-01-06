@@ -1,7 +1,10 @@
 .home-body {
     background: url('../../../assests/pictures/homeimage.png') !important;
-    height: 100vh;  
-    background-position: center; 
+    height: 700px;  
+    width: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .home-heading-container{
@@ -22,6 +25,24 @@
     color: rgba(255, 255, 255, 0.684);
 }
 
+.home-section-goal{
+    height: auto;
+    background-color: var(--secondary-color-home);
+}
+
+.home-goal-heading{
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+}
+
+.home-goal-description{
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+
+}
+
 
 
 @media only screen and (max-width: 730px) {
@@ -31,5 +52,14 @@
     .home-description{
         font-size: 12px;
        
+    }
+
+    .home-goal-heading{
+        font-size: 40px;
+    }
+    
+    .home-goal-description{
+        font-size: 13px;
+    
     }
   }

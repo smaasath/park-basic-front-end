@@ -1,0 +1,9 @@
+.footer-container {
+    background-color: var(--secondary-color) !important;
+    height: auto;
+    width: "100%";
+}
+
+.footer-social-media-container{
+    width: 150px;
+}
