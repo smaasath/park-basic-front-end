@@ -5,6 +5,8 @@ import HomeMain from './pages/HomeFlow/HomeMain/HomeMain';
 import SignIn from './pages/authorization/SignIn/SignIn';
 import AdminDashboard from './pages/AdminDashboard/AdminDashboard.js';
 import SignUp from './pages/authorization/SignUp/SignUp.js';
+import ProfilePage from './pages/ProfileFlow/ProfilePage/ProfilePage.js';
+
 
 
 
@@ -29,9 +31,14 @@ function App() {
           path='/admin'
           element={<AdminDashboard />}
         />
-          <Route
+        <Route
           path='/signup'
           element={<SignUp />}
+        />
+
+        <Route
+          path='/profile'
+          element={<ProfilePage />}
         />
       </Routes>
 
