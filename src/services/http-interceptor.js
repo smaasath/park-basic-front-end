@@ -17,8 +17,7 @@ class HttpInterceptor {
 
                 try {
                     const authToken = Cookies.get('token', { path: '/' });
-                    console.log("fuck")
-                    console.log(authToken)
+                   
 
                     if (authToken) {
                         request.headers.Authorization = "Bearer " + authToken;

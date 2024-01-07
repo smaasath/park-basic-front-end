@@ -4,6 +4,8 @@ import { Route, Routes } from 'react-router-dom';
 import HomeMain from './pages/HomeFlow/HomeMain/HomeMain';
 import SignIn from './pages/authorization/SignIn/SignIn';
 import AdminDashboard from './pages/AdminDashboard/AdminDashboard.js';
+import SignUp from './pages/authorization/SignUp/SignUp.js';
+
 
 
 
@@ -26,6 +28,10 @@ function App() {
         <Route
           path='/admin'
           element={<AdminDashboard />}
+        />
+          <Route
+          path='/signup'
+          element={<SignUp />}
         />
       </Routes>
 

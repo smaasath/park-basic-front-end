@@ -9,6 +9,8 @@ import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import CommonSignComponent from '../../../components/common/CommonSignComponent/CommonSignComponent.js';
+
 
 
 
@@ -105,59 +107,43 @@ function SignIn() {
 
     return (
         <>
-            <div className='row sign-body justify-content-center align-items-center' style={{ height: "100vh" }}>
-
-                <div className='container-fluid m-0 p-0 row justify-content-center align-items-center'>
-                    <div className='signIn-container ps-3 pe-3 p-3'>
-                        <div className='text-center signIn-heading h1'>S I G N   I N</div>
-                        <hr className='text-white mt-4' />
-                        <div className='row'>
-                            <div className='col-md-5 row justify-content-center align-items-center mt-4'>
-                                <img src={parkLogo} style={{ width: "30%" }} />
-                            </div>
-                            <div className='col-md-7 mt-4'>
-                                <div className='row justify-content-center align-items-center signIn-form-container'>
-                                    <form onSubmit={handleSubmit}>
-                                        <div className='ps-2 pe-2'>
-                                            <CommonInputs
-                                                Lable={"User Name"}
-                                                PlaceHolder={"Enter your user name"}
-                                                onChange={handleChange}
-                                                Type={"text"}
-                                                Name={"username"}
-                                            />
-                                        </div>
-
-                                        <div className='ps-2 pe-2'>
-                                            <CommonInputs
-                                                Lable={"Password"}
-                                                PlaceHolder={"Enter your Password"}
-                                                onChange={handleChange}
-                                                Type={"password"}
-                                                Name={"password"}
-                                            />
-                                        </div>
-
-                                        <div className="row ps-2 pe-2">
-                                            <div className='col-lg-4'></div>
-                                            <div className='col-lg-8 mt-2 ps-4'>
-                                                <input className="form-check-input" type="checkbox" name='rememberMe' onChange={handleChange} />
-                                                <label className='text-white ps-4'>Remember Me</label>
-                                            </div>
-
-                                        </div>
-
-                                        <div className='mt-4 d-flex justify-content-end align-items-center pe-4'>
-                                            <CommonButton loading={loading} ButtonText={"Sign In"} />
-                                        </div>
-
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+            <CommonSignComponent SignIn={true}>
+                <form onSubmit={handleSubmit} className='pt-5 pb-5'>
+                    <div className='ps-2 pe-2'>
+                        <CommonInputs
+                            Label={"User Name"}
+                            PlaceHolder={"Enter your user name"}
+                            onChange={handleChange}
+                            Type={"text"}
+                            Name={"username"}
+                        />
                     </div>
-                </div>
-            </div>
+
+                    <div className='ps-2 pe-2'>
+                        <CommonInputs
+                            Label={"Password"}
+                            PlaceHolder={"Enter your Password"}
+                            onChange={handleChange}
+                            Type={"password"}
+                            Name={"password"}
+                        />
+                    </div>
+
+                    <div className="row ps-2 pe-2">
+                        <div className='col-lg-4'></div>
+                        <div className='col-lg-8 mt-2 ps-4'>
+                            <input className="form-check-input" type="checkbox" name='rememberMe' onChange={handleChange} />
+                            <label className='text-white ps-4'>Remember Me</label>
+                        </div>
+
+                    </div>
+
+                    <div className='mt-4 d-flex justify-content-end align-items-center pe-4'>
+                        <CommonButton loading={loading} ButtonText={"Sign In"} />
+                    </div>
+
+                </form>
+            </CommonSignComponent>
             <ToastContainer autoClose={8000} />
 
 
