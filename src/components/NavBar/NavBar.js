@@ -70,7 +70,7 @@ function NavBar() {
                                     (
                                         <Nav.Link className='d-flex' onClick={() => navigate('/profile')}>
                                             <img src={ProfileIcon} className='nav-profile-icon' />
-                                            <h4 className='ms-3 nav-profile-name'>{userData != null ? userData.user.first_name : null }</h4>
+                                            <h4 className='ms-3 nav-profile-name'>{userData != null ? userData.user.last_name : null }</h4>
                                         </Nav.Link>
                                     )
                                 }

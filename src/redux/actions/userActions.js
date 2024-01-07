@@ -26,3 +26,24 @@ export const Login = (body, callback) => async (dispatch) => {
         callback(error.response);
     }
 }
+
+
+export const userRegister = (body, callback) => async (dispatch) => {
+    const endpoint = `${environment.api_base_url}/register`;
+
+    try {
+        http.post(endpoint, body)
+            .then((response) => {
+                dispatch(userData(response.data));
+                callback(response);
+
+
+            })
+            .catch((error) => {
+                callback(error.response);
+
+            });
+    } catch (error) {
+        callback(error.response);
+    }
+}
