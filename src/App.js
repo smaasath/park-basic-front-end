@@ -3,6 +3,10 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import HomeMain from './pages/HomeFlow/HomeMain/HomeMain';
 import SignIn from './pages/authorization/SignIn/SignIn';
+import AdminDashboard from './pages/AdminDashboard/AdminDashboard.js';
+
+
+
 
 
 
@@ -19,10 +23,15 @@ function App() {
           path='/signin'
           element={<SignIn />}
         />
+        <Route
+          path='/admin'
+          element={<AdminDashboard />}
+        />
       </Routes>
 
 
     </div>
+
   );
 }
 

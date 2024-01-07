@@ -1,11 +1,13 @@
-import React from 'react';
+import { configureStore } from "@reduxjs/toolkit";
+import userSlice from "./reducers/UserSlice.js";
 
-function Store() {
-    return (
-        <div className="App">
 
-        </div>
-    );
-}
+
+
+const Store = configureStore({
+    reducer: {
+        user: userSlice,
+    },
+});
 
 export default Store;

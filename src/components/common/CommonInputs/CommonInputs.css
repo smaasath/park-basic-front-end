@@ -1,0 +1,5 @@
+.common-input-container {
+    background-color: var(--input-background-color);
+    color: black;
+    border-radius: 6px;
+}

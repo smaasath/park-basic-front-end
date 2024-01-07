@@ -6,3 +6,12 @@
 .btn-close {
     background-color:var(--primary-color) !important; 
   }
+
+  .nav-profile-icon{
+    height: 30px;
+    width: 30px;
+  }
+
+  .nav-profile-name{
+    color: var(--primary-color);
+  }

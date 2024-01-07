@@ -1,0 +1,38 @@
+.sign-body {
+    background: url('../../../assests/pictures/homeimage.png'), no-repeat !important;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.signIn-container{
+    width: 80%;
+    height: 600px;
+    background-color: var(--secondary-color);
+    border-radius: 40px;
+}
+
+.signIn-heading{
+    color: var(--primary-color);
+    
+}
+
+.signIn-form-container{
+    background-color: #2A2A2A;
+    border-radius: 40px;
+    height: 250px;
+}
+
+.loader{
+   
+}
+
+/* @media only screen and (max-width: 770px) {
+    .signIn-form-container{
+        height: 50vh;
+    }
+  } */
