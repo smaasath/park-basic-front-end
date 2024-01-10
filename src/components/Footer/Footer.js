@@ -1,7 +1,7 @@
 import React from 'react'
 import './Footer.css'
 import parkLogo from '../../assests/pictures/park-basic-logo.png'
-import CommonSocialMedia from '../common/CommonSocialMedia/CommonSocialMedia'
+import CommonSocialMedia from '../common/CommonSocialMedia/CommonSocialMedia.js'
 
 
 

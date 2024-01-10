@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import NavBar from '../../../components/NavBar/NavBar'
 import './HomeMain.css'
-import CommonButton from '../../../components/common/CommonButton/CommonButton'
+import CommonButton from '../../../components/common/CommonButton/CommonButton.js'
 import ToyCar from '../../../assests/pictures/homeToyCar.png'
 import Security from '../../../assests/pictures/Security Shield.png'
 import Payment from '../../../assests/pictures/Card Payment.png'
 import Phone from '../../../assests/pictures/Android Phone.png'
-import Footer from '../../../components/Footer/Footer'
+import Footer from '../../../components/Footer/Footer.js'
 import { InfinitySpin } from 'react-loader-spinner';
 import parklogo from '../../../assests/pictures/park-basic-logo.png'
 

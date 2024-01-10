@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './SignIn.css'
 import parkLogo from '../../../assests/pictures/park-basic-logo.png'
-import CommonInputs from '../../../components/common/CommonInputs/CommonInputs';
-import CommonButton from '../../../components/common/CommonButton/CommonButton';
+import CommonInputs from '../../../components/common/CommonInputs/CommonInputs.js';
+import CommonButton from '../../../components/common/CommonButton/CommonButton.js';
 import { Login } from '../../../redux/actions/UserActions.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';

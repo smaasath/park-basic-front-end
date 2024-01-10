@@ -1,5 +1,5 @@
 import React from 'react'
-import CommonButton from '../../../components/common/CommonButton/CommonButton'
+import CommonButton from '../../../components/common/CommonButton/CommonButton.js'
 import Cookies from 'js-cookie'
 import { useNavigate } from 'react-router-dom'
 

@@ -1,5 +1,5 @@
-import { environment } from "../../environment/environment";
-import HttpInterceptor from "../../services/http-interceptor";
+import { environment } from "../../environment/environment.js";
+import HttpInterceptor from "../../services/http-interceptor.js";
 import { userData } from "../reducers/UserSlice.js";
 
 

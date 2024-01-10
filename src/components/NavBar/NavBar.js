@@ -3,13 +3,13 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import CommonButton from '../common/CommonButton/CommonButton';
+import CommonButton from '../common/CommonButton/CommonButton.js';
 import parklogo from '../../assests/pictures/park-basic-logo.png'
 import './NavBar.css'
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie'
 import { useDispatch, useSelector } from 'react-redux'
-import { Login } from '../../redux/actions/UserActions';
+import { Login } from '../../redux/actions/UserActions.js';
 import ProfileIcon from '../../assests/pictures/profile-icon.png'
 
 
