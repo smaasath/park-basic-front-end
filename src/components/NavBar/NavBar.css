@@ -15,3 +15,8 @@
   .nav-profile-name{
     color: var(--primary-color);
   }
+
+  .navbar-admin{
+    font-size: 12px;
+    font-weight: 400;
+  }

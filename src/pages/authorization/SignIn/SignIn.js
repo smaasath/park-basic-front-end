@@ -45,9 +45,7 @@ function SignIn() {
     function loginCheck(res, cookieOptions) {
 
 
-        if (res.status == 200) {
-            console.warn("suc")
-            console.warn(res.data)
+        if (res?.status == 200) {
             if (res.data.user.is_superuser == true) {
                 toast.success("Logged in Successfully", {
                     autoClose: 1000
@@ -58,18 +56,16 @@ function SignIn() {
                 Cookies.set("token", res.data.token, cookieOptions);
                 navigate('/')
             }
-        } else if (res.status == 401) {
+        } else if (res?.status == 401) {
             toast.error("Invalid Credentials", {
                 autoClose: 1000
             });
-            console.warn("error cre")
-            console.warn(res.data)
         } else {
             toast.error("Some thing went worng! Try again!", {
                 autoClose: 1000
             });
-            console.warn("error")
-            console.warn(res.data)
+            
+            
         }
 
         setloading(false);
