@@ -2,15 +2,12 @@ import React, { useEffect, useState } from "react";
 import CommonAdminLayout from "../../../components/common/CommonAdminLayout/CommonAdminLayout";
 import "./AdminParkingSlots.css";
 import slotimage from "../../../assests/pictures/slotimage.png";
-import editIcon from "../../../assests/pictures/edit.png";
-import deleteIcon from "../../../assests/pictures/delete.png";
 import CommonButton from "../../../components/common/CommonButton/CommonButton";
 import AddSlotModel from "../../../components/Models/AddSlotModel/AddSlotModel";
 import { getAllSlots } from "../../../redux/actions/slotsActions";
 import { useDispatch } from "react-redux";
 import CommonLoading from "../../../components/common/CommonLoading/CommonLoading";
-
-
+import CommonSlotTableBody from "../../../components/common/CommonSlotTableBody/CommonSlotTableBody";
 
 
 const AdminParkingSlots = () => {
@@ -18,6 +15,7 @@ const AdminParkingSlots = () => {
   const [addModalShow, setaddModalShow] = useState(false);
   const [slotData, setSlotData] = useState([])
   const [loading, setLoading] = useState(false)
+  const [editModalShow, seteditModalShow] = useState(true);
   const dispatch = useDispatch()
 
 
@@ -29,38 +27,21 @@ const AdminParkingSlots = () => {
         setSlotData(res.data.data)
       }
     }))
-  }, [])
+  }, [addModalShow, editModalShow])
 
 
   const addSlots = () => {
     setaddModalShow(true)
   }
 
-  function TableBody({ item }) {
-    return (
-      <tr>
-        <th scope="row">{item.id}</th>
-        <td>{item.slotName}</td>
-        <td>
-          <div className="d-flex gap-3">
-            <div>
-              <img src={editIcon} style={{ width: 20, height: 20 }} />
-            </div>
-            <div>
-              <img src={deleteIcon} style={{ width: 20, height: 20 }} />
-            </div>
-          </div>
-        </td>
-      </tr>
-    )
-  }
+
 
   return (
     <>
       <div>
         <CommonAdminLayout>
           {loading ? (
-            <div style={{height:"100vh"}} className="p-3 d-flex align-items-center justify-content-center">
+            <div style={{ height: "100vh" }} className="p-3 d-flex align-items-center justify-content-center">
               <CommonLoading
                 onlySpin={true}
               />
@@ -82,7 +63,7 @@ const AdminParkingSlots = () => {
               </div>
               <div className="row mt-5">
                 <div className="col-6">
-                  <div style={{ maxHeight: "600px", overflowY: "scroll" }}>
+                  <div style={{ maxHeight: "475px", overflowY: "scroll" }}>
                     <table class="table table-striped">
                       <thead>
                         <tr className="sticky-top">
@@ -93,7 +74,13 @@ const AdminParkingSlots = () => {
                       </thead>
                       <tbody>
                         {slotData && slotData.length > 0 ? (
-                          slotData.map((item, index) => <TableBody key={index} item={item} />)
+                          slotData.map((item, index) =>
+                            <CommonSlotTableBody
+                              item={item}
+                              seteditModalShow={seteditModalShow}
+                              key={index}
+
+                            />)
                         ) : (
                           <tr>
                             <td colSpan="3">No slot data available</td>
@@ -118,7 +105,10 @@ const AdminParkingSlots = () => {
 
       <AddSlotModel
         show={addModalShow}
-        onHide={() => setaddModalShow(false)}
+        onHide={() => {
+          setaddModalShow(false);
+        }
+        }
       />
     </>
   );

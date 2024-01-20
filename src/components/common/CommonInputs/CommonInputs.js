@@ -1,7 +1,7 @@
 import React from 'react'
 import './CommonInputs.css'
 
-export default function CommonInputs({ light, onChange, Label, Name, PlaceHolder, Disable, Type, error, phoneNumber }) {
+export default function CommonInputs({ value, light, onChange, Label, Name, PlaceHolder, Disable, Type, error, phoneNumber }) {
     return (
         <>
             <div className='row p-2 mt-1 justify-content-center align-items-center'>
@@ -30,6 +30,7 @@ export default function CommonInputs({ light, onChange, Label, Name, PlaceHolder
                             onChange={onChange}
                             placeholder={PlaceHolder}
                             disabled={Disable ? true : false}
+                            value={value}
                             required
                         />
                     </div>

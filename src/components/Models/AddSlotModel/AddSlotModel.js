@@ -6,16 +6,12 @@ import "react-toastify/dist/ReactToastify.css";
 import CommonInputs from '../../common/CommonInputs/CommonInputs';
 import CommonButton from '../../common/CommonButton/CommonButton';
 import { useDispatch } from 'react-redux';
-import { addSlot } from '../../../redux/actions/slotsActions';
-import { InfinitySpin } from 'react-loader-spinner';
-
-
-
+import { addSlot, editSlots } from '../../../redux/actions/slotsActions';
 
 
 
 const AddSlotModel = (props) => {
-  const [inputs, setInputs] = useState({});
+  const [inputs, setInputs] = useState({ "slotName": props.item?.slotName });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch()
@@ -32,6 +28,43 @@ const AddSlotModel = (props) => {
     setInputs(values => ({ ...values, [name]: value }))
   }
 
+  const addslotviaModel = () => {
+    dispatch(addSlot(inputs, (res) => {
+      setLoading(false)
+      if (res.status == 200) {
+        toast.success("Slot Added Success fully ", {
+          autoClose: 1000
+        });
+        props.onHide()
+
+
+      } else {
+        toast.error("Slot Didn't Added", {
+          autoClose: 1000
+        });
+      }
+    }))
+  }
+
+
+  const editslotviaModel = () => {
+    dispatch(editSlots(props.item?.id,inputs, (res) => {
+      setLoading(false)
+      if (res.status == 200) {
+        toast.success("Slot edited Successfully ", {
+          autoClose: 1000
+        });
+        props.onHide()
+
+
+      } else {
+        toast.error("Slot Didn't edited", {
+          autoClose: 1000
+        });
+      }
+    }))
+  }
+
   const handleSubmit = (event) => {
     setLoading(true)
     event.preventDefault();
@@ -39,20 +72,12 @@ const AddSlotModel = (props) => {
       setError("Please enter the slot name")
       setLoading(false)
     } else {
-      dispatch(addSlot(inputs, (res) => {
-        setLoading(false)
-        if (res.status == 200) {  
-          toast.success("Slot Added Success fully ", {
-            autoClose: 1000
-          });
+      if (props.item) {
+        editslotviaModel()
+      } else {
+        addslotviaModel()
+      }
 
-
-        } else {
-          toast.error("Slot Didn't Added", {
-            autoClose: 1000
-          });
-        }
-      }))
     }
   }
 
@@ -66,7 +91,7 @@ const AddSlotModel = (props) => {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Add Slots
+            {props.item ? "Edit Slot" : "Add Slots"}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -79,6 +104,7 @@ const AddSlotModel = (props) => {
                 Type={"text"}
                 Name={"slotName"}
                 light={true}
+                value={inputs.slotName}
                 error={error}
               />
             </div>
@@ -89,7 +115,7 @@ const AddSlotModel = (props) => {
           <Button className='bg-secondary' onClick={props.onHide}>Close</Button>
           <CommonButton
             onclick={handleSubmit}
-            ButtonText={"Add Slot"}
+            ButtonText={props.item ? "Edit Slot" : "Add Slot"}
             loading={loading}
           />
 
