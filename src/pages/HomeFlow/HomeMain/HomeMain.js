@@ -9,6 +9,8 @@ import Phone from '../../../assests/pictures/Android Phone.png'
 import Footer from '../../../components/Footer/Footer.js'
 import { InfinitySpin } from 'react-loader-spinner';
 import parklogo from '../../../assests/pictures/park-basic-logo.png'
+import CommonLoading from '../../../components/common/CommonLoading/CommonLoading.js'
+
 
 
 
@@ -33,21 +35,7 @@ function HomeMain() {
         <>
             {loading ?
                 (
-                    <div className='d-flex text-center justify-content-center align-items-center loader-spinner'>
-                        <div className='row  justify-content-center align-items-center'>
-                            <img src={parklogo} style={{width:"45%"}} />
-
-                            <InfinitySpin
-                                visible={true}
-                                width="200"
-                                color="#FB8800"
-
-                            />
-                        </div>
-
-
-
-                    </div>
+                    <CommonLoading />
                 )
                 :
                 (

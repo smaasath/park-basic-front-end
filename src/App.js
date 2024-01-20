@@ -6,6 +6,10 @@ import SignIn from './pages/authorization/SignIn/SignIn.js';
 import SignUp from './pages/authorization/SignUp/SignUp.js';
 import ProfilePage from './pages/ProfileFlow/ProfilePage/ProfilePage.js';
 import AdminBooking from './pages/AdminDashboard/AdminBooking/AdminBooking.js';
+import AdminParkingSlots from './pages/AdminDashboard/ParkingSlots/AdminParkingSlots.js';
+
+
+
 
 
 
@@ -30,6 +34,12 @@ function App() {
           path='/signup'
           element={<SignUp />}
         />
+
+        <Route
+          path='/AdminSlots'
+          element={<AdminParkingSlots />}
+        />
+
 
         <Route
           path='/profile'

@@ -66,9 +66,9 @@ function NavBar({ isAdmin }) {
               >
                 <div className="d-flex-column me-3">
                   <div>
-                    <h4 className="ms-3 nav-profile-name">
+                    <h6 className="ms-3 nav-profile-name">
                       {userData != null ? userData.user.first_name : null}
-                    </h4>
+                    </h6>
                   </div>
                   <div>
                     <h6 className="ms-3 text-white navbar-admin">Admin</h6>
@@ -109,6 +109,7 @@ function NavBar({ isAdmin }) {
                       onClick={() => navigate("/profile")}
                     >
                       <img src={ProfileIcon} className="nav-profile-icon" />
+
                       <h4 className="ms-3 nav-profile-name">
                         {userData != null ? userData.user.last_name : null}
                       </h4>

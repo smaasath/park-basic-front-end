@@ -1,11 +1,11 @@
 import React from 'react'
 import './CommonInputs.css'
 
-export default function CommonInputs({ onChange, Label, Name, PlaceHolder, Disable, Type, error, phoneNumber }) {
+export default function CommonInputs({ light, onChange, Label, Name, PlaceHolder, Disable, Type, error, phoneNumber }) {
     return (
         <>
             <div className='row p-2 mt-1 justify-content-center align-items-center'>
-                <div className='col-lg-4 text-white h7 mt-2'>
+                <div className={light ? 'col-lg-4 text-dark h7 mt-2' : 'col-lg-4 text-white h7 mt-2'}>
                     {Label}
                 </div>
 
