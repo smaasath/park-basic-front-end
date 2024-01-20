@@ -3,14 +3,9 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import HomeMain from './pages/HomeFlow/HomeMain/HomeMain.js';
 import SignIn from './pages/authorization/SignIn/SignIn.js';
-import AdminDashboard from './pages/AdminDashboard/AdminDashboard.js';
 import SignUp from './pages/authorization/SignUp/SignUp.js';
 import ProfilePage from './pages/ProfileFlow/ProfilePage/ProfilePage.js';
-
-
-
-
-
+import AdminBooking from './pages/AdminDashboard/AdminBooking/AdminBooking.js';
 
 
 
@@ -29,7 +24,7 @@ function App() {
         />
         <Route
           path='/admin'
-          element={<AdminDashboard />}
+          element={<AdminBooking />}
         />
         <Route
           path='/signup'

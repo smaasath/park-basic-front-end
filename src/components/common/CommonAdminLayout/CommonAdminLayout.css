@@ -1,0 +1,9 @@
+.CommonAdminLayout-body{
+    height: 100vh;
+
+}
+
+.CommonAdminLayout-nav{
+height: 100px;
+background-color: red;
+}
