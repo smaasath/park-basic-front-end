@@ -1,0 +1,32 @@
+.body{
+    background-color:  var(--secondary-color-home);
+}
+.head{
+    padding-top: 20px;
+    color: #FB8800;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.slot{
+    background-color: gray;
+     border: black solid;
+     border-radius: 20px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-right: 50px;
+}
+.slot_id{
+    color: rgba(255, 255, 255, 0.684);
+    display: block;
+
+}
+.row_item{
+    margin-top: 50px;
+     justify-content: center;
+     align-items: center;    
+}
+.second_row{
+    color: white;
+    
+}

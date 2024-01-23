@@ -7,6 +7,8 @@ import SignUp from './pages/authorization/SignUp/SignUp.js';
 import ProfilePage from './pages/ProfileFlow/ProfilePage/ProfilePage.js';
 import AdminBooking from './pages/AdminDashboard/AdminBooking/AdminBooking.js';
 import AdminParkingSlots from './pages/AdminDashboard/ParkingSlots/AdminParkingSlots.js';
+import BookingMain from './pages/HomeFlow/BookingMain/BookingMain.js';
+import Slot from './pages/HomeFlow/BookingMain/BookingSlot/BookingSlot.js';
 
 
 
@@ -44,6 +46,15 @@ function App() {
         <Route
           path='/profile'
           element={<ProfilePage />}
+        />
+
+        <Route
+          path='/Booking'
+          element={<BookingMain />}
+        />
+        <Route
+          path='/slot'
+          element={<Slot />}
         />
       </Routes>
 

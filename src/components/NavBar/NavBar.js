@@ -80,13 +80,13 @@ function NavBar({ isAdmin }) {
               <Offcanvas.Body className="justify-content-center align-items-center bg-dark">
                 <Nav className="justify-content-center flex-grow-1 pe-3 gap-5">
                   <Nav.Link
-                    onClick={() => navigatePage("/action")}
+                    onClick={() => navigatePage("/")}
                     className="text-white"
                   >
                     Home
                   </Nav.Link>
                   <Nav.Link
-                    onClick={() => navigatePage("/action")}
+                    onClick={() => navigatePage("/Booking")}
                     className="text-white"
                   >
                     Booking
