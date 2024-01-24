@@ -1,14 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CommonAdminLayout from "../../../components/common/CommonAdminLayout/CommonAdminLayout";
 import "./AdminBooking.css";
 import viewicon from "../../../assests/pictures/viewicon.png";
+import { getAllBookings } from "../../../redux/actions/BookingActions";
+import { useDispatch, useSelector } from "react-redux";
+import AdminBookingDetail from "../AdminBookingDetail/AdminBookingDetail";
+import { useNavigate } from "react-router-dom";
 
 const AdminBooking = () => {
+  const [booking, setbookings] = useState([]);
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(
+      getAllBookings((res) => {
+        console.log(res.data.data);
+        setbookings(res.data.data);
+      })
+    );
+  }, []);
+
+  const opendetailPage = (item) => {
+    navigate(`/AdminBookingDetails/${1}`);
+  };
+
   return (
     <div>
       <CommonAdminLayout>
-        <div className="container">
-          <div className="row">
+        <div className="container AdminBooking-body pt-5">
+          {/* <div className="row">
             <div className="col">
               <select
                 classNames="selectpicker outline "
@@ -35,12 +56,12 @@ const AdminBooking = () => {
                 </button>
               </form>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="container mt-5">
-          <div style={{ overflow: "scroll",maxHeight: 500 }}>
-            <table className="table table-hover mt-5">
+          <div style={{ maxHeight: "475px", overflowY: "scroll" }}>
+            <table className="table table-striped">
               <thead>
                 <tr className="sticky-top">
                   <th classNamee="col-1">Id</th>
@@ -53,33 +74,28 @@ const AdminBooking = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="col-1">Id</td>
-                  <td className="col-2">Date</td>
-                  <td className="col-2">Time</td>
-                  <td className="col-1">Slot</td>
-                  <td className="col-2">Car no</td>
-                  <td className="col-3">Reserver Name</td>
-                  <td className="col-1"></td>
-                </tr>
-                <tr>
-                  <td className="col-1">Id</td>
-                  <td className="col-2">Date</td>
-                  <td className="col-2">Time</td>
-                  <td className="col-1">Slot</td>
-                  <td className="col-2">Car no</td>
-                  <td className="col-3">Reserver Name</td>
-                  <td className="col-1"></td>
-                </tr>
-                <tr>
-                  <td className="col-1">Id</td>
-                  <td className="col-2">Date</td>
-                  <td className="col-2">Time</td>
-                  <td className="col-1">Slot</td>
-                  <td className="col-2">Car no</td>
-                  <td className="col-3">Reserver Name</td>
-                  <td className="col-1"></td>
-                </tr>
+                {booking &&
+                  booking.map((data, index) => (
+                    <tr key={index}>
+                      <td className="col-1">{data.booking_data?.id}</td>
+                      <td className="col-2">{data.booking_data?.Date}</td>
+                      <td className="col-2">{data.booking_data?.Time}</td>
+                      <td className="col-1">
+                        {data.booking_slot_data?.slotName}
+                      </td>
+                      <td className="col-2">{data.reserver_data?.carNo}</td>
+                      <td className="col-3">
+                        {data.user_data?.first_name} {data.user_data?.last_name}
+                      </td>
+                      <td className="col-1">
+                        <img
+                          onClick={opendetailPage}
+                          src={viewicon}
+                          style={{ height: 25, width: 25 }}
+                        />
+                      </td>
+                    </tr>
+                  ))}
               </tbody>
             </table>
           </div>

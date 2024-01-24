@@ -11,8 +11,6 @@ import { Slide } from "react-toastify";
 import CommonDashboardNav from "../CommonDashboardNav/CommonDashboardNav";
 
 
-// import profilepic from ".../../../assests/pictures/park-basic-logo.png";
-
 function Sidebar({ children }) {
 
   const [windowSize, setWindowSize] = useState([
