@@ -43,7 +43,7 @@ class HttpInterceptor {
                 if (error.response.status) {
                     switch (error.response.status) {
                         case 401: {
-                            // Set the unauthorized error notification
+                            console.log('[ERROR]', ' [HTTP Interceptor, Status Code]', error.response.status);
                             break;
                         }
                         default: {
