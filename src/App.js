@@ -11,7 +11,8 @@ import AdminParkingSlots from './pages/AdminDashboard/ParkingSlots/AdminParkingS
 import BookingMain from './pages/HomeFlow/BookingMain/BookingMain.js';
 import Slot from './pages/HomeFlow/BookingMain/BookingSlot/BookingSlot.js';
 import AdminBookingDetail from "./pages/AdminDashboard/AdminBookingDetail/AdminBookingDetail.js";
-import Mybooking from './pages/MyBooingFlow/Mybooking/Mybooking.js';
+import Mybooking from './pages/MyBooingFlow/Mybooiking/Mybooking.js';
+
 
 
 

@@ -9,7 +9,9 @@ const AdminBookingDetail = () => {
   return (
     <div>
       <CommonAdminLayout>
+
         <div className="AdminBooking-detail-body pt-5 container mt-5">{id}</div>
+
       </CommonAdminLayout>
     </div>
   );

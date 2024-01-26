@@ -92,6 +92,12 @@ function NavBar({ isAdmin }) {
                     Booking
                   </Nav.Link>
                   <Nav.Link
+                    onClick={() => navigatePage("/Mybooking")}
+                    className="text-white"
+                  >
+                   my Booking
+                  </Nav.Link>
+                  <Nav.Link
                     onClick={() => navigatePage("/action")}
                     className="text-white"
                   >
