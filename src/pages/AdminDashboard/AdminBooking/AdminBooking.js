@@ -17,12 +17,13 @@ const AdminBooking = () => {
       getAllBookings((res) => {
         console.log(res.data.data);
         setbookings(res.data.data);
+
       })
     );
   }, []);
 
   const opendetailPage = (item) => {
-    navigate(`/AdminBookingDetails/${1}`);
+    navigate(`/AdminBookingDetails/${item}`);
   };
 
   return (
@@ -89,7 +90,7 @@ const AdminBooking = () => {
                       </td>
                       <td className="col-1">
                         <img
-                          onClick={opendetailPage}
+                          onClick={() => opendetailPage(data.booking_data?.id)}
                           src={viewicon}
                           style={{ height: 25, width: 25 }}
                         />
