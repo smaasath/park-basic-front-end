@@ -36,6 +36,10 @@ function App() {
           path='/Booking'
           element={<BookingMain />}
         />
+         <Route
+          path='/Mybooking'
+          element={<Mybooking />}
+        />
         <Route
           path='/slot'
           element={<Slot />}
