@@ -37,7 +37,6 @@ function App() {
           path='/slot'
           element={<Slot />}
         />
-      </Routes>
         <Route path="/profile" element={<ProfilePage />} />
       </Routes>
     </div>

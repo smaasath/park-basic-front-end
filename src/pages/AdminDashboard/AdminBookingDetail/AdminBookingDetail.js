@@ -8,7 +8,7 @@ const AdminBookingDetail = ({item}) => {
   return (
     <div>
       <CommonAdminLayout>
-        <div className="AdminBooking-detail-body pt-5 container mt-5">{param}</div>
+        {/* <div className="AdminBooking-detail-body pt-5 container mt-5">{param}</div> */}
       </CommonAdminLayout>
     </div>
   );
