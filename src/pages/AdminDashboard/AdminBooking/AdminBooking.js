@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import AdminBookingDetail from "../AdminBookingDetail/AdminBookingDetail";
 import { useNavigate } from "react-router-dom";
 
+
+
 const AdminBooking = () => {
   const [booking, setbookings] = useState([]);
   const navigate = useNavigate();
@@ -23,6 +25,7 @@ const AdminBooking = () => {
   }, []);
 
   const opendetailPage = (item) => {
+
     navigate(`/AdminBookingDetails/${item}`);
   };
 
