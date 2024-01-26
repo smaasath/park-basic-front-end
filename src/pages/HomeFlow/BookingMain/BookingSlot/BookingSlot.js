@@ -14,7 +14,7 @@ export default function BookingSlot() {
   return (
     <div className='body'>
          <NavBar></NavBar>
-        <div className='form'>
+        <div className='form_1'>
       <Form>
       <h6>Select The Time Slot</h6>
       <Form.Group className="mb-3" controlId="formBasicPassword">
