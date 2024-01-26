@@ -19,6 +19,7 @@ const AdminBooking = () => {
       getAllBookings((res) => {
         console.log(res.data.data);
         setbookings(res.data.data);
+
       })
     );
   }, []);

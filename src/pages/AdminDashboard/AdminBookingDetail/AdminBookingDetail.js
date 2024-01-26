@@ -123,6 +123,7 @@ const AdminBookingDetail = () => {
             </div>
           </>
         )}
+
       </CommonAdminLayout>
     </div>
   );

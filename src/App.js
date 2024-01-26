@@ -11,6 +11,9 @@ import AdminParkingSlots from './pages/AdminDashboard/ParkingSlots/AdminParkingS
 import BookingMain from './pages/HomeFlow/BookingMain/BookingMain.js';
 import Slot from './pages/HomeFlow/BookingMain/BookingSlot/BookingSlot.js';
 import AdminBookingDetail from "./pages/AdminDashboard/AdminBookingDetail/AdminBookingDetail.js";
+import Mybooking from './pages/MyBooingFlow/Mybooiking/Mybooking.js';
+
+
 
 
 function App() {
@@ -37,7 +40,14 @@ function App() {
           path='/slot'
           element={<Slot />}
         />
+
+           <Route
+          path='/Mybooking'
+          element={<Mybooking />}
+        />
+
         <Route path="/profile" element={<ProfilePage />} />
+
       </Routes>
     </div>
   );
