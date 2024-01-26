@@ -1,3 +1,4 @@
+
 import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
@@ -9,43 +10,23 @@ import AdminBooking from './pages/AdminDashboard/AdminBooking/AdminBooking.js';
 import AdminParkingSlots from './pages/AdminDashboard/ParkingSlots/AdminParkingSlots.js';
 import BookingMain from './pages/HomeFlow/BookingMain/BookingMain.js';
 import Slot from './pages/HomeFlow/BookingMain/BookingSlot/BookingSlot.js';
-
-
-
-
+import AdminBookingDetail from "./pages/AdminDashboard/AdminBookingDetail/AdminBookingDetail.js";
 
 
 function App() {
   return (
-
     <div>
       <Routes>
-        <Route
-          path='/'
-          element={<HomeMain />}
-        />
-        <Route
-          path='/signin'
-          element={<SignIn />}
-        />
-        <Route
-          path='/admin'
-          element={<AdminBooking />}
-        />
-        <Route
-          path='/signup'
-          element={<SignUp />}
-        />
+        <Route path="/" element={<HomeMain />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/admin" element={<AdminBooking />} />
+        <Route path="/signup" element={<SignUp />} />
+
+        <Route path="/AdminSlots" element={<AdminParkingSlots />} />
 
         <Route
-          path='/AdminSlots'
-          element={<AdminParkingSlots />}
-        />
-
-
-        <Route
-          path='/profile'
-          element={<ProfilePage />}
+          path="/AdminBookingDetails"
+          element={<AdminBookingDetail />}
         />
 
         <Route
@@ -57,10 +38,9 @@ function App() {
           element={<Slot />}
         />
       </Routes>
-
-
+        <Route path="/profile" element={<ProfilePage />} />
+      </Routes>
     </div>
-
   );
 }
 
