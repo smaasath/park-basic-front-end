@@ -1,4 +1,4 @@
-import CryptoJS from 'crypto-js';
+
 
 export function validateCarNumber(carNumber) {
     const carNoValidator = /^([a-zA-Z]{1,3}|([0-9]{1,3}))-[0-9]{4}$/;

@@ -23,8 +23,7 @@ const Mybooking = () => {
 
   useEffect(() => {
     dispatch(
-      getAllBookings(3,(res) => {
-        
+      getAllBookings((res) => {   
           setBooking(res.data.data)
           setName(res.data.data.user_data.first_name)
           setCarNo(res.data.data.reserver_data.carNo)
