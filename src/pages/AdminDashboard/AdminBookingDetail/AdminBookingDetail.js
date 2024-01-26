@@ -51,6 +51,7 @@ const AdminBookingDetail = () => {
   return (
     <div>
       <CommonAdminLayout>
+
         {loading == true ? (
           <>
             <div
@@ -123,6 +124,7 @@ const AdminBookingDetail = () => {
             </div>
           </>
         )}
+
 
       </CommonAdminLayout>
     </div>

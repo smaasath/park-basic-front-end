@@ -40,12 +40,6 @@ function App() {
           path='/slot'
           element={<Slot />}
         />
-
-           <Route
-          path='/Mybooking'
-          element={<Mybooking />}
-        />
-
         <Route path="/profile" element={<ProfilePage />} />
 
       </Routes>
