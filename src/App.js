@@ -25,7 +25,7 @@ function App() {
         <Route path="/AdminSlots" element={<AdminParkingSlots />} />
 
         <Route
-          path="/AdminBookingDetails"
+          path="/AdminBookingDetails/:id"
           element={<AdminBookingDetail />}
         />
 
