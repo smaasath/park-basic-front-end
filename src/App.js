@@ -31,6 +31,10 @@ function App() {
           path="/AdminBookingDetails/:id"
           element={<AdminBookingDetail />}
         />
+        <Route
+          path="/AdminBookingDetails/"
+          element={<AdminBooking />}
+        />
 
         <Route
           path='/Booking'
@@ -41,7 +45,12 @@ function App() {
           element={<Mybooking />}
         />
         <Route
-          path='/slot'
+          path='/slot/'
+          element={<BookingMain />}
+        />
+
+        <Route
+          path='/slot/:id'
           element={<Slot />}
         />
         <Route path="/profile" element={<ProfilePage />} />

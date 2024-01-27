@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     bookingData: null,
+    selectedTime: null
 };
 
 const BookingSlice = createSlice({
@@ -12,11 +13,16 @@ const BookingSlice = createSlice({
             state.bookingData = action.payload
         },
 
+        selectedTime: (state, action) => {
+            state.selectedTime = action.payload
+        },
+
+
     }
 })
 
 
-export const { bookingData } = BookingSlice.actions
+export const { bookingData, selectedTime } = BookingSlice.actions
 
 export default BookingSlice.reducer
 
