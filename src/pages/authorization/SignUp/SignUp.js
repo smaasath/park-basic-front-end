@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import CommonSignComponent from '../../../components/common/CommonSignComponent/CommonSignComponent.js'
 import CommonInputs from '../../../components/common/CommonInputs/CommonInputs.js'
 import CommonButton from '../../../components/common/CommonButton/CommonButton.js'
@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux'
 import Cookies from 'js-cookie'
 import { toast, ToastContainer } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-import { conPasswordValitaion, passwordValidation, validateCarNumber, validatePhoneNumber } from '../../../Validations/Validations.js'
+import {passwordValidation, validateCarNumber, validatePhoneNumber } from '../../../Validations/Validations.js'
 
 const SignUp = () => {
 
@@ -53,7 +53,7 @@ const SignUp = () => {
     function RegisterCheck(res, cookieOptions) {
 
 
-        if (res.status == 200) {
+        if (res.status === 200) {
             console.warn("suc")
             console.warn(res.data)
             if (res.data.user.is_superuser == true) {
@@ -66,7 +66,7 @@ const SignUp = () => {
                 Cookies.set("token", res.data.token, cookieOptions);
                 navigate('/')
             }
-        } else if (res.status == 400) {
+        } else if (res.status === 400) {
             toast.error(
                 res.data?.error?.username ?
                     "User Name Already Registered" :
@@ -142,7 +142,7 @@ const SignUp = () => {
 
 
     function conPasswordValitaion(pass) {
-        return pass === inputs.password;
+        return pass === inputs.password ? true : false;
     }
 
 

@@ -8,32 +8,18 @@ import parklogo from "../../assests/pictures/park-basic-logo.png";
 import "./NavBar.css";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
-import { useDispatch, useSelector } from "react-redux";
-import { Login } from "../../redux/actions/UserActions.js";
 import ProfileIcon from "../../assests/pictures/profile-icon.png";
 
-function NavBar({ isAdmin }) {
-  const dispatch = useDispatch();
-  const { userData } = useSelector((state) => state.user);
+function NavBar({ isAdmin , name }) {
+
   const token = Cookies.get("token");
-
-  useEffect(() => {
-    if (token) {
-      dispatch(
-        Login(null, (res) => {
-          console.log(res);
-        })
-      );
-    }
-  }, [token]);
-
   const navigate = useNavigate();
 
   function navigatePage(page) {
     navigate(page);
   }
 
-  console.log(userData);
+
 
   return (
     <>
@@ -67,7 +53,7 @@ function NavBar({ isAdmin }) {
                 <div className="d-flex-column me-3">
                   <div>
                     <h6 className="ms-3 nav-profile-name">
-                      {userData != null ? userData.user.first_name : null}
+                      {name != null ? name : null}
                     </h6>
                   </div>
                   <div>
@@ -117,7 +103,7 @@ function NavBar({ isAdmin }) {
                       <img src={ProfileIcon} className="nav-profile-icon" />
 
                       <h4 className="ms-3 nav-profile-name">
-                        {userData != null ? userData.user.last_name : null}
+                        {name != null ? name : null}
                       </h4>
                     </Nav.Link>
                   )}

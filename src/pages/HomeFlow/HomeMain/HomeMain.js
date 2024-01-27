@@ -10,11 +10,9 @@ import Footer from '../../../components/Footer/Footer.js'
 import { InfinitySpin } from 'react-loader-spinner';
 import parklogo from '../../../assests/pictures/park-basic-logo.png'
 import CommonLoading from '../../../components/common/CommonLoading/CommonLoading.js'
-
-
-
-
-
+import { Login } from '../../../redux/actions/UserActions.js'
+import Cookies from 'js-cookie'
+import { useDispatch, useSelector } from 'react-redux'
 
 
 
@@ -22,14 +20,28 @@ function HomeMain() {
 
     const [loading, setloading] = useState(false);
 
+    const dispatch = useDispatch();
+    const { userData } = useSelector((state) => state.user);
+    const token = Cookies.get("token");
+  
     useEffect(() => {
-        setloading(true)
-
-        setTimeout(() => {
+    setloading(true)
+      if (token) {
+        if(userData == null){
+          dispatch(
+            Login(null, (res) => {
+              setloading(false);
+            })
+          );
+        }else{
             setloading(false);
-        }, 1500);
+        }
+      }else{
+        setloading(false);
+      }
+     
+    }, [token]);
 
-    }, []);
 
     return (
         <>
@@ -42,7 +54,7 @@ function HomeMain() {
 
                     <>
 
-                        <NavBar />
+                        <NavBar name={userData?.user?.first_name}/>
 
                         <section>
                             <div className='container-fluid m-0 p-0 home-body'>
