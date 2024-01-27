@@ -60,3 +60,22 @@ export const editSlots = (id, data, callback) => async (dispatch) => {
     }
 }
 
+export const getBookingDataBySlots = (id, callback) => async (dispatch) => {
+    const endpoint = `${environment.api_base_url}/bookingSlots/${id}`;
+
+    try {
+        http.get(endpoint)
+            .then((response) => {
+                callback(response);
+            })
+            .catch((error) => {
+                callback(error.response);
+
+            });
+    } catch (error) {
+        callback(error.response);
+    }
+}
+
+
+
