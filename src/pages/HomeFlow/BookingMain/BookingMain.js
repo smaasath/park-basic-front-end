@@ -24,7 +24,7 @@ export default function BookingMain() {
     dispatch(
       getAllSlots(
         (res) => {
-          if (res.status == 200) {
+          if (res?.status == 200) {
             setSlotData(res.data.data)
             setLoading(false)
           }

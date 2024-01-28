@@ -77,5 +77,22 @@ export const getBookingDataBySlots = (id, callback) => async (dispatch) => {
     }
 }
 
+export const deleteSlots = (id, callback) => async (dispatch) => {
+    const endpoint = `${environment.api_base_url}/bookingSlots/${id}`;
+
+    try {
+        http.delete(endpoint)
+            .then((response) => {
+                callback(response);
+            })
+            .catch((error) => {
+                callback(error.response);
+
+            });
+    } catch (error) {
+        callback(error.response);
+    }
+}
+
 
 

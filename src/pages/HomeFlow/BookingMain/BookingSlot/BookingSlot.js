@@ -37,9 +37,9 @@ export default function BookingSlot() {
     dispatch(
       getBookingDataBySlots(id,
         (res) => {
-          if (res.status == 200) {
+          if (res?.status == 200) {
             setBookingData(res.data.booking_data)
-            // setLoading(false)
+            setLoading(false)
           }
 
         }
@@ -52,7 +52,7 @@ export default function BookingSlot() {
     dispatch(
       getAllBookingTime(
         (res) => {
-          if (res.status == 200) {
+          if (res?.status == 200) {
             setTimeData(res.data.time_data)
             setLoading(false)
           }
@@ -75,7 +75,7 @@ export default function BookingSlot() {
           toast.success("Booking Created SuccessFully ", {
             autoClose: 1000
           });
-          setbooking(booking+1)
+          setbooking(booking + 1)
           setbuttonloading(false)
         } else if (res.status == 401) {
           navigate('/signin')
@@ -95,7 +95,10 @@ export default function BookingSlot() {
 
       <div className='p-5 d-flex flex-wrap justify-content-between gap-5'>
         {loading ? (
-          <CommonLoading onlySpin={true} />
+          <div className='row w-100 align-items-center justify-content-center'>
+            <CommonLoading onlySpin={true} />
+          </div>
+
         )
           : (
             <>
