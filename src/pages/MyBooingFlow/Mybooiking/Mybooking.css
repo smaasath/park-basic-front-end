@@ -1,5 +1,5 @@
 .form{
-    padding-left: 400px;
+
     text-align: center;
     width: max-content;
     margin: auto;
@@ -7,18 +7,6 @@
     color: white;
     padding-bottom: 50px;
 }
-.form1{
-    padding-left: 350px;
-position: absolute;
-display: flex;
-align-items: start;
-justify-content: left;
-text-align: center;
-width: max-content;
-margin: auto;
-padding-top: 50px;
-color: white;
-padding-bottom: 50px;
-}
+
 
 
