@@ -11,10 +11,9 @@ import Footer from "../../../components/Footer/Footer.js";
 import { useState } from "react";
 const Mybooking = () => {
   const [booking,setBooking]=useState([])
+  const [bookingId,setbookingId]=useState('')
   const [slotId,setSlotId]=useState('')
   const [timeId,setTimeId]=useState('')
-  const [name,setName]=useState('')
-  const [carNo,setCarNo]=useState('')
   const [inputs, setInputs] = useState({
     timeId: timeId,
     slotId: slotId
@@ -24,16 +23,17 @@ const Mybooking = () => {
   useEffect(() => {
     dispatch(
       getAllBookings((res) => {   
-          setBooking(res.data.data)
-          setName(res.data.data.user_data.first_name)
-          setCarNo(res.data.data.reserver_data.carNo)
-          setSlotId(res.data.data.booking_data.slotId)
-          setTimeId(res.data.data.booking_data.timeId)
-         console.log(res.data.data)
+        console.log(res.data.data[0])
+          setBooking(res.data.data[0])
+          setbookingId(res.data.data[0].booking_data.id)
+
+          setSlotId(res.data.data[0].booking_data.slotId)
+          setTimeId(res.data.data[0].booking_data.timeId)
+         console.log(res.data.data[0])
          setInputs({
           ...inputs,
-          timeId: res.data.data.booking_data.timeId,
-          slotId: res.data.data.booking_data.slotId
+          timeId: res.data.data[0].booking_data.timeId,
+          slotId: res.data.data[0].booking_data.slotId
         })
 
 
@@ -55,11 +55,11 @@ const Mybooking = () => {
   function handleSubmit(event) {
     event.preventDefault();
     console.log(inputs);
-    dispatch(updateBookings(3,inputs, (res) => {
-
+    dispatch(updateBookings(bookingId,inputs, (res) => {
+      console.log(res.status)
           if (res.status == 200) {
             toast.success("Booking Updated Successfully ", {
-              autoClose: 1000
+            autoClose: 1000
             });
       
       
@@ -100,6 +100,7 @@ const Mybooking = () => {
 
 
   return (
+    <>
     <div className="body">
       <NavBar></NavBar>
       
@@ -110,17 +111,7 @@ const Mybooking = () => {
                     setCarNo=data.reserver_data?.carNo
                   ))} */}
                     
-        <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Name</Form.Label>
-            <Form.Control type="text" placeholder="Name" value={name} />
-          </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>CarNo</Form.Label>
-            <Form.Control type="text" placeholder="CarNo" value={carNo} />
-          </Form.Group>
-        </Form>
      
 
     
@@ -130,35 +121,42 @@ const Mybooking = () => {
 
         <Form onSubmit={handleSubmit}>
 
-       <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Time ID</Form.Label>
-            <Form.Control type="text" placeholder="Time ID"  onChange={handleInputChange}
-                Type={"text"}
-                Name={"timeId"}
-                light={true}
-                value={inputs.timeId}/>
-          </Form.Group>
+
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Slot ID</Form.Label>
-            <Form.Control type="text" placeholder="Slot ID" onChange={handleInputChange}
-                Type={"text"}
-                Name={"slotId"}
-                light={true}
-                value={inputs.slotId}/>
+            <Form.Label>Select The Slot</Form.Label>
+            <Form.Select aria-label="Default select example" Name={"slotId"} value={inputs.slotId} onChange={handleInputChange}>
+              <option>Select The Time Slot</option>
+              <option value="1">Slot-1</option>
+              <option value="2">Slot-2</option>
+              <option value="3">Slot-3</option>
+              <option value="4">Slot-4</option>
+              <option value="5">Slot-5</option>
+              <option value="6">Slot-6</option>
+              <option value="7">Slot-7</option>
+              <option value="8">Slot-8</option>
+              <option value="9">Slot-9</option>
+              <option value="10">Slot-10</option>
+
+
+
+            </Form.Select>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Select The Time Slot</Form.Label>
-            <Form.Select aria-label="Default select example">
+            <Form.Select aria-label="Default select example"  Name={"timeId"} value={inputs.timeId} onChange={handleInputChange}>
               <option>Select The Time Slot</option>
-              <option value="1">6.00 a.m - 8.00 a.m</option>
-              <option value="2">8.00 a.m - 10.00 a.m</option>
-              <option value="3">10.00 a.m - 12.00 p.m</option>
-              <option value="4">12.00 p.m - 2.00 p.m</option>
-              <option value="5">2.00 p.m - 4.00 p.m</option>
-              <option value="6">4.00 p.m - 6.00 p.m</option>
-              <option value="4">6.00 p.m - 8.00 p.m</option>
-              <option value="5">8.00 p.m - 10.00 p.m</option>
-              <option value="6">10.00 p.m - 12.00 a.m</option>
+              <option value="1">12.00am - 2.00am</option>
+              <option value="2">2.00am - 4.00am</option>
+              <option value="3">4.00am - 6.00am</option>
+              <option value="4">6.00 a.m - 8.00 a.m</option>
+              <option value="5">8.00 a.m - 10.00 a.m</option>
+              <option value="6">10.00 a.m - 12.00 p.m</option>
+              <option value="7">12.00 p.m - 2.00 p.m</option>
+              <option value="8">2.00 p.m - 4.00 p.m</option>
+              <option value="9">4.00 p.m -6.00 p.m</option>
+              <option value="10">6.00 p.m - 8.00 p.m</option>
+              <option value="11">8.00 p.m - 10.00 p.m</option>
+              <option value="12">10.00 p.m - 12.00 a.m</option>
             </Form.Select>
           </Form.Group>
           <Button variant="primary" type="submit" >
@@ -169,6 +167,8 @@ const Mybooking = () => {
       </div>
       <Footer></Footer>
     </div>
+    <ToastContainer autoClose={8000} />
+    </>
   );
 };
 
