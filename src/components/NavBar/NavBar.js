@@ -48,7 +48,7 @@ function NavBar({ isAdmin , name }) {
             {isAdmin ? (
               <Nav.Link
                 className="d-flex align-items-center justify-content-end"
-                onClick={() => navigate("/profile")}
+                onClick={() => navigate("/Userprofile")}
               >
                 <div className="d-flex-column me-3">
                   <div>
@@ -98,7 +98,7 @@ function NavBar({ isAdmin , name }) {
                   ) : (
                     <Nav.Link
                       className="d-flex"
-                      onClick={() => navigate("/profile")}
+                      onClick={() => navigate("/Userprofile")}
                     >
                       <img src={ProfileIcon} className="nav-profile-icon" />
 

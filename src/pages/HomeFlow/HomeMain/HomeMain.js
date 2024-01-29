@@ -13,6 +13,8 @@ import CommonLoading from '../../../components/common/CommonLoading/CommonLoadin
 import { Login } from '../../../redux/actions/UserActions.js'
 import Cookies from 'js-cookie'
 import { useDispatch, useSelector } from 'react-redux'
+import UserProfile from "../../UserProfile/UserProfileDetails/UserProfile";
+import ProfileEdit from "../../UserProfile/UserProfileEdit/ProfileEdit";
 
 
 
@@ -23,13 +25,14 @@ function HomeMain() {
     const dispatch = useDispatch();
     const { userData } = useSelector((state) => state.user);
     const token = Cookies.get("token");
-  
     useEffect(() => {
+
     setloading(true)
       if (token) {
         if(userData == null){
           dispatch(
             Login(null, (res) => {
+                console.log(userData)
               setloading(false);
             })
           );
@@ -103,6 +106,7 @@ function HomeMain() {
                         </section>
 
                         <Footer />
+
                     </>
                 )
             }

@@ -81,7 +81,6 @@ function SignIn() {
     const handleSubmit = (event) => {
         setloading(true);
         event.preventDefault();
-        console.log(inputs);
         const cookieOptions = {
             path: "/"
         };
