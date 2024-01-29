@@ -47,3 +47,42 @@ export const userRegister = (body, callback) => async (dispatch) => {
         callback(error.response);
     }
 }
+
+export const getUserDetails = (callback) => async (dispatch) => {
+    const endpoint = `${environment.api_base_url}/user/`;
+
+    try {
+        http.get(endpoint)
+            .then((response) => {
+                dispatch(userData(response.data));
+                callback(response);
+
+
+            })
+            .catch((error) => {
+                callback(error.response);
+
+            });
+    } catch (error) {
+        callback(error.response);
+    }
+}
+
+
+export const updateUserDetails = (data,callback) => async (dispatch) => {
+    const endpoint = `${environment.api_base_url}/user/`;
+
+    try {
+        http.put(endpoint,data)
+            .then((response) => {
+                callback(response);
+
+            })
+            .catch((error) => {
+                callback(error.response);
+
+            });
+    } catch (error) {
+        callback(error.response);
+    }
+}

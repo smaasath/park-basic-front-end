@@ -12,6 +12,8 @@ import BookingMain from './pages/HomeFlow/BookingMain/BookingMain.js';
 import Slot from './pages/HomeFlow/BookingMain/BookingSlot/BookingSlot.js';
 import AdminBookingDetail from "./pages/AdminDashboard/AdminBookingDetail/AdminBookingDetail.js";
 import Mybooking from './pages/MyBooingFlow/Mybooiking/Mybooking.js';
+import ProfileEdit from "./pages/UserProfile/UserProfileEdit/ProfileEdit";
+import UserProfile from "./pages/UserProfile/UserProfileDetails/UserProfile";
 
 
 
@@ -26,6 +28,13 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
 
         <Route path="/AdminSlots" element={<AdminParkingSlots />} />
+
+
+        {/*Thimira*/}
+
+
+        <Route path="/ProfileEdit" element={<ProfileEdit />} />
+        <Route path="/UserProfile" element={<UserProfile />} />
 
         <Route
           path="/AdminBookingDetails/:id"
