@@ -68,7 +68,13 @@ function Sidebar({ children }) {
               navTo={"/AdminSlots"}
             />
 
-            
+            <CommonDashboardNav
+              open={open}
+              icon={slotIcon}
+              windowSize={windowSize}
+              ElementName={"Log out"}
+              navTo={"/AdminSlots"}
+            />
           </div>
         </div>
 
