@@ -23,7 +23,7 @@ const Mybooking = () => {
   useEffect(() => {
     dispatch(
       getAllBookings((res) => {   
-        console.log(res.data.data[0])
+        console.log(res.data.data[0].booking_data.id)
           setBooking(res.data.data[0])
           setbookingId(res.data.data[0].booking_data.id)
 
