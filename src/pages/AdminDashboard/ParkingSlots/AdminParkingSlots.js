@@ -15,7 +15,8 @@ const AdminParkingSlots = () => {
   const [addModalShow, setaddModalShow] = useState(false);
   const [slotData, setSlotData] = useState([])
   const [loading, setLoading] = useState(false)
-  const [editModalShow, seteditModalShow] = useState(true);
+  const [editModalShow, seteditModalShow] = useState(0);
+  const [deleteModalShow, setdeleteModalShows] = useState(0);
   const dispatch = useDispatch()
 
 
@@ -27,7 +28,7 @@ const AdminParkingSlots = () => {
         setSlotData(res.data.data)
       }
     }))
-  }, [addModalShow, editModalShow])
+  }, [addModalShow, editModalShow, deleteModalShow])
 
 
   const addSlots = () => {
@@ -78,6 +79,9 @@ const AdminParkingSlots = () => {
                             <CommonSlotTableBody
                               item={item}
                               seteditModalShow={seteditModalShow}
+                              setdeleteModalShows={setdeleteModalShows}
+                              editModalShows={editModalShow}
+                              deleteModalShows={deleteModalShow}
                               key={index}
 
                             />)
