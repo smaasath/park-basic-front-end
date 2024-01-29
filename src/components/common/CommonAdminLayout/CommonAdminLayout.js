@@ -1,8 +1,7 @@
-
 import React, { useEffect, useState, useCallback } from "react";
 import parklogo from "../../../assests/pictures/park-basic-logo.png";
 import BookingIcon from "../../../assests/pictures/icons8-booking-100.png";
-import slotIcon from '../../../assests/pictures/slots.png'
+import slotIcon from "../../../assests/pictures/slots.png";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import "./CommonAdminLayout.css";
@@ -10,9 +9,7 @@ import NavBar from "../../NavBar/NavBar";
 import { Slide } from "react-toastify";
 import CommonDashboardNav from "../CommonDashboardNav/CommonDashboardNav";
 
-
 function Sidebar({ children }) {
-
   const [windowSize, setWindowSize] = useState([
     window.innerWidth,
     window.innerHeight,
@@ -35,7 +32,10 @@ function Sidebar({ children }) {
   return (
     <>
       <div className="row CommonAdminLayout-body">
-        <div style={{ backgroundColor: "#F2F3F4" }} className={!open ? "col-2" : "col-1"}>
+        <div
+          style={{ backgroundColor: "#F2F3F4" }}
+          className={!open ? "col-2" : "col-1"}
+        >
           <div
             className="sidebar"
             style={{ width: !open && windowSize[0] * 0.16 }}
@@ -52,7 +52,6 @@ function Sidebar({ children }) {
               )}
             </div>
 
-
             <CommonDashboardNav
               open={open}
               icon={BookingIcon}
@@ -60,7 +59,6 @@ function Sidebar({ children }) {
               ElementName={"Bookings"}
               navTo={"/admin"}
             />
-
 
             <CommonDashboardNav
               open={open}
@@ -70,10 +68,11 @@ function Sidebar({ children }) {
               navTo={"/AdminSlots"}
             />
 
+            
           </div>
         </div>
 
-        <div className={!open ? "col-10 p-0" : "col-11"} style={{zIndex:10}}>
+        <div className={!open ? "col-10 p-0" : "col-11"} style={{ zIndex: 10 }}>
           <div className="fixed-top">
             <NavBar isAdmin={true} />
           </div>
