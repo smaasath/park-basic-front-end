@@ -14,6 +14,8 @@ import AdminBookingDetail from "./pages/AdminDashboard/AdminBookingDetail/AdminB
 import Mybooking from './pages/MyBooingFlow/Mybooiking/Mybooking.js';
 import ProfileEdit from "./pages/UserProfile/UserProfileEdit/ProfileEdit";
 import UserProfile from "./pages/UserProfile/UserProfileDetails/UserProfile";
+import UserBookings from './pages/MyBooingFlow/UserBookings/UserBookings.js';
+
 
 
 
@@ -51,6 +53,10 @@ function App() {
         />
          <Route
           path='/Mybooking'
+          element={<UserBookings />}
+        />
+         <Route
+          path='/Mybooking/:id'
           element={<Mybooking />}
         />
         <Route
